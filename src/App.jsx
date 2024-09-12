@@ -26,6 +26,12 @@ function App() {
           errorElement: <Error />,
         },
         {
+          path: "/search/:searchValue",
+          element: <Homepage />,
+          loader: homepageLoader,
+          errorElement: <Error />,
+        },
+        {
           path: "/country/:countryId",
           element: <CountryDetail />,
         },

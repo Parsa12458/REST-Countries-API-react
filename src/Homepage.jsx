@@ -12,7 +12,6 @@ function Homepage() {
   const { region: regionUrl } = useParams();
 
   useEffect(() => {
-    console.log(regionUrl);
     if (regionUrl) setRegion(regionUrl);
   }, [regionUrl, setRegion]);
 
@@ -30,13 +29,15 @@ function Homepage() {
 
 export async function loader({ params }) {
   const region = params.region || "all";
+  const searchValue = params.searchValue;
+
+  let url;
+  if (region === "all") url = "https://restcountries.com/v3.1/all";
+  if (region !== "all") url = `https://restcountries.com/v3.1/region/${region}`;
+  if (searchValue) url = `https://restcountries.com/v3.1/name/${searchValue}`;
 
   const res = await Promise.race([
-    fetch(
-      region === "all"
-        ? "https://restcountries.com/v3.1/all"
-        : `https://restcountries.com/v3.1/region/${region}`,
-    ),
+    fetch(url),
     new Promise((_, reject) =>
       setTimeout(
         () => reject(new Error("Request took too long! Please try again.")),
