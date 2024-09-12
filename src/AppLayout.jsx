@@ -10,7 +10,7 @@ function AppLayout() {
     <div className="overflow-x-hidden">
       <Header />
 
-      <div className="min-h-screen bg-veryLightGray pt-24">
+      <div className="min-h-screen bg-veryLightGray pt-24 dark:bg-darkBlue">
         {isLoading ? <Spinner /> : <Outlet />}
       </div>
     </div>

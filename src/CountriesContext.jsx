@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 import { createContext, useContext, useState } from "react";
 
 const CountriesContext = createContext();
@@ -26,4 +27,5 @@ function useCountries() {
   return context;
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export { CountriesProvider, useCountries };

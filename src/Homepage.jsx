@@ -16,7 +16,7 @@ function Homepage() {
   }, [regionUrl, setRegion]);
 
   return (
-    <div className="min-h-screen px-4 lg:px-10">
+    <div className="min-h-screen px-4 lg:px-10 dark:bg-darkBlue">
       <SearchBox />
       <div className="mt-14 flex flex-wrap justify-center gap-10 px-10">
         {countries?.map((country) => (

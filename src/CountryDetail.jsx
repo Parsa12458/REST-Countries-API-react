@@ -4,7 +4,7 @@ function CountryDetail() {
   const { data: country, bordersData } = useLoaderData();
 
   return (
-    <div className="mx-auto flex flex-col items-center justify-between px-10 py-8 lg:mt-7 lg:flex-row lg:items-start lg:gap-10 xl:justify-start xl:gap-14 2xl:w-[100rem]">
+    <div className="mx-auto flex flex-col items-center justify-between px-10 py-8 lg:mt-7 lg:flex-row lg:items-start lg:gap-10 xl:justify-start xl:gap-14 2xl:w-[100rem] dark:text-white">
       <img
         src={country.flags.png}
         alt={country.flags.alt}
@@ -56,7 +56,7 @@ function CountryDetail() {
                   <Link
                     key={border.cca3}
                     to={`/country/${border.cca3}`}
-                    className="rounded bg-white px-3 py-2 drop-shadow"
+                    className="rounded bg-white px-3 py-2 drop-shadow dark:bg-blue"
                   >
                     {border.name.common}
                   </Link>
@@ -71,6 +71,7 @@ function CountryDetail() {
 
 export default CountryDetail;
 
+// eslint-disable-next-line react-refresh/only-export-components
 export async function loader({ params }) {
   const { countryCode } = params;
 

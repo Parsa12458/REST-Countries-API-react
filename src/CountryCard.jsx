@@ -5,7 +5,7 @@ function CountryCard({ country }) {
   const navigate = useNavigate();
   return (
     <div
-      className="w-64 cursor-pointer overflow-hidden rounded bg-white drop-shadow-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl"
+      className="w-64 cursor-pointer overflow-hidden rounded bg-white drop-shadow-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl dark:bg-blue dark:text-white"
       onClick={() => navigate(`/country/${country.cca3}`)}
     >
       <img
