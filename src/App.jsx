@@ -4,7 +4,7 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Homepage, { loader as homepageLoader } from "./Homepage";
-import CountryDetail from "./CountryDetail";
+import CountryDetail, { loader as countryDetailLoader } from "./CountryDetail";
 import AppLayout from "./AppLayout";
 import Error from "./Error";
 import { CountriesProvider } from "./CountriesContext";
@@ -32,8 +32,10 @@ function App() {
           errorElement: <Error />,
         },
         {
-          path: "/country/:countryId",
+          path: "/country/:countryCode",
           element: <CountryDetail />,
+          loader: countryDetailLoader,
+          errorElement: <Error />,
         },
       ],
     },

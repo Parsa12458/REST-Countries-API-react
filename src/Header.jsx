@@ -3,7 +3,10 @@ import { Link } from "react-router-dom";
 function Header() {
   return (
     <header className="absolute left-0 right-0 top-0 z-10 flex items-center justify-between bg-white px-4 py-5 drop-shadow-md lg:px-10">
-      <Link className="text-lg font-bold tracking-wide sm:text-xl" to="/">
+      <Link
+        className="text-lg font-bold tracking-wide sm:text-xl"
+        to="/region/all"
+      >
         Where in the world?
       </Link>
       <button className="flex items-center gap-2 border-b border-b-transparent px-3 py-2 text-sm transition-all duration-300 hover:border-b hover:border-black">

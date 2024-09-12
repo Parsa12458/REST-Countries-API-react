@@ -29,7 +29,7 @@ function Homepage() {
 
 export async function loader({ params }) {
   const region = params.region || "all";
-  const searchValue = params.searchValue;
+  const { searchValue } = params;
 
   let url;
   if (region === "all") url = "https://restcountries.com/v3.1/all";
@@ -46,7 +46,7 @@ export async function loader({ params }) {
     ),
   ]);
 
-  if (!res.ok) throw Error("Failed getting countries");
+  if (!res.ok) throw new Error("Failed getting countries list");
 
   const data = await res.json();
   return data;

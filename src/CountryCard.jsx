@@ -1,7 +1,13 @@
+import { useNavigate } from "react-router-dom";
+
 /* eslint-disable react/prop-types */
 function CountryCard({ country }) {
+  const navigate = useNavigate();
   return (
-    <div className="w-64 cursor-pointer overflow-hidden rounded bg-white drop-shadow-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl">
+    <div
+      className="w-64 cursor-pointer overflow-hidden rounded bg-white drop-shadow-xl transition-all duration-300 hover:scale-105 hover:drop-shadow-2xl"
+      onClick={() => navigate(`/country/${country.cca3}`)}
+    >
       <img
         src={country.flags.png}
         alt={country.flags.alt}
