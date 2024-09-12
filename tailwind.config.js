@@ -12,6 +12,9 @@ export default {
         white: "hsl(0, 0%, 100%)",
       },
     },
+    fontFamily: {
+      sans: ["Nunito sans", "sans-serif"],
+    },
   },
   plugins: [],
 };
