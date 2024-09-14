@@ -7,6 +7,7 @@ import inject from "@rollup/plugin-inject";
 import tailwindcss from "tailwindcss";
 
 export default defineConfig({
+  base: "/REST-Countries-API-react/",
   build: {
     outDir: "docs",
   },
