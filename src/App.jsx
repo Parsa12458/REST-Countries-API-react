@@ -10,36 +10,41 @@ import AppLayout from "./AppLayout";
 import Error from "./Error";
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        element: <AppLayout />,
+        errorElement: <Error />,
+        children: [
+          {
+            path: "/",
+            element: <Navigate to="/region/all" />,
+          },
+          {
+            path: "/region/:region",
+            element: <Homepage />,
+            loader: homepageLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: "/search/:searchValue",
+            element: <Homepage />,
+            loader: homepageLoader,
+            errorElement: <Error />,
+          },
+          {
+            path: "/country/:countryCode",
+            element: <CountryDetail />,
+            loader: countryDetailLoader,
+            errorElement: <Error />,
+          },
+        ],
+      },
+    ],
     {
-      element: <AppLayout />,
-      errorElement: <Error />,
-      children: [
-        {
-          path: "/",
-          element: <Navigate to="/region/all" />,
-        },
-        {
-          path: "/region/:region",
-          element: <Homepage />,
-          loader: homepageLoader,
-          errorElement: <Error />,
-        },
-        {
-          path: "/search/:searchValue",
-          element: <Homepage />,
-          loader: homepageLoader,
-          errorElement: <Error />,
-        },
-        {
-          path: "/country/:countryCode",
-          element: <CountryDetail />,
-          loader: countryDetailLoader,
-          errorElement: <Error />,
-        },
-      ],
+      basename: "/REST-Countries-API-react",
     },
-  ]);
+  );
 
   return (
     <CountriesProvider>
