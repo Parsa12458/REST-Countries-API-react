@@ -3,11 +3,11 @@ import {
   Navigate,
   RouterProvider,
 } from "react-router-dom";
+import { CountriesProvider } from "./CountriesContext";
 import Homepage, { loader as homepageLoader } from "./Homepage";
 import CountryDetail, { loader as countryDetailLoader } from "./CountryDetail";
 import AppLayout from "./AppLayout";
 import Error from "./Error";
-import { CountriesProvider } from "./CountriesContext";
 
 function App() {
   const router = createBrowserRouter([

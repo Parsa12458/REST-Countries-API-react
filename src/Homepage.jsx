@@ -1,10 +1,9 @@
 /* eslint-disable react-refresh/only-export-components */
-import { useLoaderData } from "react-router-dom";
+import { useEffect } from "react";
+import { useLoaderData, useParams } from "react-router-dom";
+import { useCountries } from "./CountriesContext";
 import SearchBox from "./SearchBox";
 import CountryCard from "./CountryCard";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { useCountries } from "./CountriesContext";
 
 function Homepage() {
   const countries = useLoaderData();

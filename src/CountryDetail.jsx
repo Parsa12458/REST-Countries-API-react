@@ -1,10 +1,11 @@
+import React from "react";
 import { Link, useLoaderData } from "react-router-dom";
 
 function CountryDetail() {
   const { data: country, bordersData } = useLoaderData();
 
   return (
-    <>
+    <React.Fragment>
       <Link
         to={-1}
         className="mb-4 ml-6 mt-4 inline-block rounded bg-white px-7 py-2 drop-shadow transition-all duration-300 hover:scale-105 dark:bg-blue dark:text-white"
@@ -75,7 +76,7 @@ function CountryDetail() {
           </div>
         </div>
       </div>
-    </>
+    </React.Fragment>
   );
 }
 
